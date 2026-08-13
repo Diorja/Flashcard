@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: saddlebrown;
+    background-color: rgb(199, 13, 13);
 }
 
 .cartao{
@@ -30,6 +30,9 @@ body {
 
 main {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cabecalho-link{
@@ -43,23 +46,40 @@ h1 {
 }
 
 footer{
-    background-color: saddlebrown;
+    background-color: rgb(7, 240, 228);
     padding: 15px 25px;
 }
 
 .cartao-interno {
     position: relative;
+    width: 100%;
+    height: 100%;
     transition: 0.8s;
+    transform-style: preserve-3d;
 }
 .cartao:hover .cartao-interno{
     transform: rotateY(180deg);
 
 }
-.cartao-frente, .cartao-verso {
-    position: absolute;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.cartao-frente, 
+.cartao-verso { 
+  position: absolute; 
+  border-radius: 12px; 
+  width: 100%;
+    height: 100%;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+  background-color: #ffffff;
+  backface-visibility: hidden; 
+  -webkit-backface-visibility: hidden; /* Safari / Chrome antigos */
+} 
+.cartao-frente {
+    transform: rotateY(0deg);
 }
 .cartao-verso{
     transform: rotateY(180deg);
+}
+
+section{
+    display: flex;
+    gap: 16px;
 }
